@@ -70,12 +70,12 @@ from django.http import StreamingHttpResponse
 from g.models import Player, PlayerLevel, Prize, LevelPrize, Level
 import csv
 
+
 class Echo:
-
-
-    def write(self, value):
+ def write(self, value):
         return value
 
+Сама функция для экспорта в csv
 def streaming_export_csv(request):
     rows = ([PlayerLevel.objects.all()[j].player_id,
                PlayerLevel.objects.all()[j].level.title,
